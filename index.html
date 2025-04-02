@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankan Barik - Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            scroll-behavior: smooth;
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, orange, red);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-link:hover {
+            color: orange;
+        }
+
+        .service-card,
+        .project-card {
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover,
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="font-sans">
+
+    <body class="font-sans">
+        
+       <!-- Replace your current nav section with this -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-md">
+    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center p-4">
+        <div class="flex w-full md:w-auto justify-between items-center">
+            <div class="text-2xl font-bold">
+                <span class="text-white">Ankan</span>
+                <span class="gradient-text">Barik</span>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:flex flex-col md:flex-row w-full md:w-auto space-y-4 md:space-y-0 md:space-x-6 mt-4 md:mt-0">
+            <a href="#home" class="nav-link text-white">Home</a>
+            <a href="#about" class="nav-link text-white">About</a>
+            <a href="#services" class="nav-link text-white">Skills</a>
+            <a href="#projects" class="nav-link text-white">Projects</a>
+            <a href="#contact" class="nav-link text-white">Contact</a>
+        </div>
+        <a href="#contact" class="hidden md:block bg-orange-600 text-white px-4 py-2 rounded-full hover:bg-orange-700">Contact Me</a>
+    </div>
+</nav>
+
+        <!-- Home Section -->
+        <section id="home" class="min-h-screen flex items-center container mx-auto px-4 pt-16">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="w-full md:w-1/2 space-y-4 text-center md:text-left mb-8 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold">
+                        Hi, It's <span class="gradient-text">Ankan</span><br>
+                        I'm a Web Developer
+                    </h1>
+                    <p class="text-gray-300">
+                        Passionate frontend developer with expertise in HTML, CSS, JavaScript, and React.js.
+                        Dedicated to creating responsive and innovative web solutions.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ankanbarik@gmail.com"
+                            class="bg-orange-600 text-white px-6 py-3 rounded-full hover:bg-orange-700">Hire Me</a>
+                        <a href="#contact"
+                            class="border border-orange-600 text-orange-600 px-6 py-3 rounded-full hover:bg-orange-600 hover:text-white">Contact</a>
+                    </div>
+                    <div class="social-icons flex space-x-4 mt-4 justify-center md:justify-start">
+                        <a href="https://www.linkedin.com/in/aankan-barik/"
+                            class="social-icon-link w-12 h-12 bg-black rounded-full flex items-center justify-center relative group overflow-hidden">
+                            <div
+                                class="circle-wrapper absolute w-full h-full rounded-full bg-orange-500 opacity-0 group-hover:opacity-50 transition-opacity duration-300 -z-10">
+                            </div>
+                            <i
+                                class="bx bxl-linkedin-square text-3xl text-orange-500 group-hover:text-white transition-all duration-300 z-10"></i>
+                        </a>
+                        <a href="https://github.com/ankan-barik"
+                            class="social-icon-link w-12 h-12 bg-black rounded-full flex items-center justify-center relative group overflow-hidden">
+                            <div
+                                class="circle-wrapper absolute w-full h-full rounded-full bg-orange-500 opacity-0 group-hover:opacity-50 transition-opacity duration-300 -z-10">
+                            </div>
+                            <i
+                                class="bx bxl-github text-3xl text-orange-500 group-hover:text-white transition-all duration-300 z-10"></i>
+                        </a>
+                        <a href="https://www.instagram.com/aaankannn?igsh=eGlzeDZucTg4N3oy"
+                            class="social-icon-link w-12 h-12 bg-black rounded-full flex items-center justify-center relative group overflow-hidden">
+                            <div
+                                class="circle-wrapper absolute w-full h-full rounded-full bg-orange-500 opacity-0 group-hover:opacity-50 transition-opacity duration-300 -z-10">
+                            </div>
+                            <i
+                                class="bx bxl-instagram-alt text-3xl text-orange-500 group-hover:text-white transition-all duration-300 z-10"></i>
+                        </a>
+                        <a href="https://x.com/aaankannn"
+                            class="social-icon-link w-12 h-12 bg-black rounded-full flex items-center justify-center relative group overflow-hidden">
+                            <div
+                                class="circle-wrapper absolute w-full h-full rounded-full bg-orange-500 opacity-0 group-hover:opacity-50 transition-opacity duration-300 -z-10">
+                            </div>
+                            <i
+                                class="bx bxl-twitter text-3xl text-orange-500 group-hover:text-white transition-all duration-300 z-10"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Example in Home Section -->
+                <div class="w-full md:w-1/2 flex justify-center">
+                    <div class="image-container cursor-glow relative">
+                        <div class="w-64 h-64 md:w-96 md:h-96 bg-gradient-to-br from-orange-500 to-red-500 rounded-full absolute -z-10"></div>
+                        <div class="home-img">
+                            <img src="WhatsApp Image 2025-04-02 at 00.47.15_a8fb2567.jpg" alt="Profile Image"
+                                class="w-64 h-64 md:w-96 md:h-96 object-cover rounded-full relative z-10">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- About Section -->
+       <!-- Replace your about section with this -->
+<section id="about" class="min-h-screen flex items-center container mx-auto px-4">
+    <div class="flex flex-col-reverse md:flex-row items-center">
+        <div class="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
+            <div class="image-container relative">
+                <div class="w-64 h-64 md:w-96 md:h-96 bg-gradient-to-br from-orange-500 to-red-500 rounded-full absolute -z-10"></div>
+                <div class="home-img">
+                    <img src="WhatsApp Image 2025-04-02 at 01.07.27_e9c47df3.jpg" alt="Ankan Barik"
+                        class="w-64 h-64 md:w-96 md:h-96 object-cover rounded-full relative z-10">
+                </div>
+            </div>
+        </div>
+        <div class="w-full md:w-1/2 space-y-4 text-center md:text-left">
+            <h2 class="text-3xl md:text-4xl font-bold">
+                About <span class="gradient-text">Me</span>
+            </h2>
+            <p class="text-gray-300">
+                I'm a B.Tech Computer Science student at Kalinga Institute of Industrial Technology with a
+                strong passion for web development.
+                Proficient in frontend technologies like HTML, CSS, JavaScript, and React.js.
+                Experienced in creating responsive and innovative web solutions.
+            </p>
+            <div class="flex justify-center md:justify-start">
+                <a href="https://drive.google.com/file/d/1BsN3vgv20fR7uxwE-1cSrnfyvPSlVnv8/view?usp=sharing"
+                    class="inline-block bg-orange-600 text-white px-6 py-3 rounded-full hover:bg-orange-700">Read
+                    More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Replace your services section with this -->
+<section id="services" class="min-h-screen flex items-center container mx-auto px-4">
+    <div class="w-full">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">
+            My <span class="gradient-text">Skills</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- First skill card -->
+            <div class="service-card bg-orange-600 p-6 rounded-lg text-center">
+                <div class="text-4xl mb-4 flex justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold mb-4">UI/UX Design</h3>
+                <p>Creating intuitive and visually appealing user interfaces that enhance user experience and
+                    engagement.</p>
+            </div>
+            <!-- Second skill card -->
+            <div class="service-card bg-orange-600 p-6 rounded-lg text-center">
+                <div class="text-4xl mb-4 flex justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold mb-4">Frontend Development</h3>
+                <p>Building responsive and interactive web applications using modern frontend technologies.</p>
+            </div>
+            <!-- Third skill card -->
+            <div class="service-card bg-orange-600 p-6 rounded-lg text-center">
+                <div class="text-4xl mb-4 flex justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold mb-4">Backend Development</h3>
+                <p>Developing robust server-side solutions to support and enhance web application functionality.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="min-h-screen flex items-center container mx-auto px-4 mb-24">
+            <div class="w-full">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">
+                    My <span class="gradient-text">Projects</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- First Project -->
+            <div class="project-card bg-orange-600 p-3 rounded-lg flex-1">
+                <img src="Screenshot 2025-04-01 213951.png" alt="PrintFusion AI"
+                    class="w-full h-auto object-contain rounded-md mb-4">
+                <h3 class="text-2xl font-bold mb-4">PrintFusion AI</h3>
+                <p>A customized e-commerce platform for personalized T-Shirts and gifts,featuring an AI- powered "Create Design" section for AI-generated designs, color customization, and downloads.
+                </p>
+                <a href="https://ankan-barik.github.io/printFusion_AI/"
+                    class="inline-block mt-4 bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800">Review
+                    Project</a>
+            </div>
+
+            <!-- Second Project -->
+            <div class="project-card bg-orange-600 p-3 rounded-lg flex-1">
+                <img src="Screenshot 2025-04-01 231707.png" alt="Diamond Price Predictor"
+                    class="w-full h-auto object-cover rounded-md mb-4">
+                <h3 class="text-2xl font-bold mb-4">Diamond Price Predict</h3>
+                <p>Implemented dynamic input forms for users to enter diamond attributes (carat,cut,color,clarity,width,length etc.),with
+                    real-time validation and responsiveness.
+                </p>
+                <a href="https://ankan-barik.github.io/Diamond-Price-Predictor/"
+                    class="inline-block mt-4 bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800">Review
+                    Project</a>
+            </div>
+
+            <!-- Third Project -->
+            <div class="project-card bg-orange-600 p-3 rounded-lg flex-1">
+                <img src="Screenshot 2025-04-01 213224.png" alt="ShopEase"
+                    class="w-full h-auto object-cover rounded-md mb-4">
+                <h3 class="text-2xl font-bold mb-4">ShopEase</h3>
+                <p>A fully responsive Myntra clone built with an intuitive UI and seamless navigation, featuring a stylish interface, offering
+                    a real-time shopping experience with modern design and animations.</p>
+                <a href="https://ankan-barik.github.io/ShopEase/"
+                    class="inline-block mt-4 bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800">Review
+                    Project</a>
+            </div>
+            
+            <!-- Fourth Project -->
+            <div class="project-card bg-orange-600 p-3 rounded-lg flex-1">
+                <img src="Screenshot 2025-04-02 161055.png" alt="Weather Sphere"
+                    class="w-full h-auto object-cover rounded-md mb-4">
+                <h3 class="text-2xl font-bold mb-4">Weather Sphere</h3>
+                <p>Displays live temperature, wind speed,sunrise/sunset timings for any searched location, and well-structured weather cards for easy navigation.</p>
+                <a href="https://ankan-barik.github.io/Weather-Sphere/"
+                    class="inline-block mt-4 bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800">Review
+                    Project</a>
+            </div>
+            
+            <!-- Fifth Project -->
+            <div class="project-card bg-orange-600 p-3 rounded-lg flex-1">
+                <img src="Screenshot 2025-04-02 161116.png" alt="TimeZone Tracker"
+                    class="w-full h-auto object-cover rounded-md mb-4">
+                <h3 class="text-2xl font-bold mb-4">TimeZone Tracker</h3>
+                <p> Displays live time updates for different countries with a user-friendly interface, and additional features like search and alarm settings.</p>
+                <a href="https://ankan-barik.github.io/TimeZone-Tracker/"
+                    class="inline-block mt-4 bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800">Review
+                    Project</a>
+            </div>
+            
+            
+            <!-- Sixth Project -->
+            <div class="project-card bg-orange-600 p-3 rounded-lg flex-1">
+                <img src="Screenshot 2025-04-02 161747.png" alt="Jungle Slither Game"
+                    class="w-full h-auto object-cover rounded-md mb-4">
+                <h3 class="text-2xl font-bold mb-4">Jungle Slither Game</h3>
+                <p>Implemented Optimized Game Mechanics including collision detection, responsive design, and high-score saving for an enhanced user experience.</p>
+                <a href="https://ankan-barik.github.io/Jungle-Slither-Game/"
+                    class="inline-block mt-4 bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800">Review
+                    Project</a>
+            </div>
+        </div>
+    </div>
+</section>
+        <!-- Contact Section -->
+        <!-- Replace your contact section with this -->
+<section id="contact" class="min-h-screen flex items-center container mx-auto px-4 mt-12 md:mt-24">
+    <div class="w-full">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">
+            Contact <span class="gradient-text">Me</span>
+        </h2>
+        <div class="max-w-2xl mx-auto bg-orange-600 p-4 rounded-lg">
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <div class="grid grid-cols-1 gap-4">
+                    <input type="hidden" name="access_key" value="0eb99993-ac65-44fb-aa35-af2f3036bcab">
+                    <input type="text" name="name" placeholder="Full Name"
+                        class="w-full p-3 rounded-lg bg-black/20 text-white placeholder-white" required>
+                    <input type="email" name="email" placeholder="Email"
+                        class="w-full p-3 rounded-lg bg-black/20 text-white placeholder-white" required>
+                    <input type="tel" name="phone" placeholder="Phone Number"
+                        class="w-full p-3 rounded-lg bg-black/20 text-white placeholder-white">
+                    <input type="text" name="subject" placeholder="Subject"
+                        class="w-full p-3 rounded-lg bg-black/20 text-white placeholder-white">
+                    <textarea name="message" placeholder="Your Message" rows="5"
+                        class="w-full p-3 rounded-lg bg-black/20 text-white placeholder-white"
+                        required></textarea>
+                    <button type="submit"
+                        class="w-full bg-black text-white p-3 rounded-lg hover:bg-gray-800">Send
+                        Message</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+        <footer class="bg-black text-white py-4 border-t border-gray-800">
+            <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+                <div class="social-icons flex space-x-4 mb-4 md:mb-0">
+                    <a href="https://www.linkedin.com/in/aankan-barik/"
+                        class="social-icon-link w-10 h-10 rounded-full flex items-center justify-center relative group overflow-hidden">
+                        <div
+                            class="circle-wrapper absolute w-full h-full rounded-full bg-orange-500 opacity-0 group-hover:opacity-50 transition-opacity duration-300 -z-10">
+                        </div>
+                        <i
+                            class="bx bxl-linkedin-square text-2xl text-orange-500 group-hover:text-white transition-all duration-300 z-10"></i>
+                    </a>
+                    <a href="https://github.com/ankan-barik"
+                        class="social-icon-link w-10 h-10 rounded-full flex items-center justify-center relative group overflow-hidden">
+                        <div
+                            class="circle-wrapper absolute w-full h-full rounded-full bg-orange-500 opacity-0 group-hover:opacity-50 transition-opacity duration-300 -z-10">
+                        </div>
+                        <i
+                            class="bx bxl-github text-2xl text-orange-500 group-hover:text-white transition-all duration-300 z-10"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/aaankannn?igsh=eGlzeDZucTg4N3oy"
+                        class="social-icon-link w-10 h-10 rounded-full flex items-center justify-center relative group overflow-hidden">
+                        <div
+                            class="circle-wrapper absolute w-full h-full rounded-full bg-orange-500 opacity-0 group-hover:opacity-50 transition-opacity duration-300 -z-10">
+                        </div>
+                        <i
+                            class="bx bxl-instagram-alt text-2xl text-orange-500 group-hover:text-white transition-all duration-300 z-10"></i>
+                    </a>
+                    <a href="https://x.com/aaankannn"
+                        class="social-icon-link w-10 h-10 rounded-full flex items-center justify-center relative group overflow-hidden">
+                        <div
+                            class="circle-wrapper absolute w-full h-full rounded-full bg-orange-500 opacity-0 group-hover:opacity-50 transition-opacity duration-300 -z-10">
+                        </div>
+                        <i
+                            class="bx bxl-twitter text-2xl text-orange-500 group-hover:text-white transition-all duration-300 z-10"></i>
+                    </a>
+                </div>
+                <div class="flex flex-wrap justify-center md:justify-start space-x-4 mb-4 md:mb-0">
+                    <a href="#" class="hover:text-orange-500 transition-colors">FAQ</a>
+                    <a href="#about" class="hover:text-orange-500 transition-colors">About Me</a>
+                    <a href="#services" class="hover:text-orange-500 transition-colors">Skills</a>
+                    <a href="#projects" class="hover:text-orange-500 transition-colors">Projects</a>
+                    <a href="#contact" class="hover:text-orange-500 transition-colors">Contact</a>
+                </div>
+                <div class="text-sm">
+                    Ankan Barik | All Rights Reserved
+                </div>
+            </div>
+        </footer>
+
+        <!-- Font Awesome for icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </body>
+
+
+</html>

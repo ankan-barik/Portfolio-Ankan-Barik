@@ -1,0 +1,139 @@
+
+   // Add this to your script.js file
+document.addEventListener('DOMContentLoaded', function () {
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    }
+    // Smooth scrolling for navigation links (existing code)
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    // Image Glow Effect (existing code)
+    const glowContainers = document.querySelectorAll('.cursor-glow, .image-container');
+
+    glowContainers.forEach(container => {
+        // Mouse move event
+        container.addEventListener('mousemove', function (e) {
+            const rect = container.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            // Create or update glow effect
+            let glowElement = container.querySelector('.glow-effect');
+            if (!glowElement) {
+                glowElement = document.createElement('div');
+                glowElement.classList.add('glow-effect');
+                container.appendChild(glowElement);
+            }
+
+            glowElement.style.position = 'absolute';
+            glowElement.style.top = '0';
+            glowElement.style.left = '0';
+            glowElement.style.width = '100%';
+            glowElement.style.height = '100%';
+            glowElement.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255, 165, 0, 0.3), transparent 50%)`;
+            glowElement.style.pointerEvents = 'none';
+            glowElement.style.zIndex = '1';
+            glowElement.style.borderRadius = 'inherit';
+        });
+
+        // Mouse leave event to remove glow
+        container.addEventListener('mouseleave', function () {
+            const glowElement = container.querySelector('.glow-effect');
+            if (glowElement) {
+                glowElement.remove();
+            }
+        });
+    });
+
+    // Colors array for hover effects
+    const colors = [
+        '#FF5733', // Bright Red
+        '#33FF57', // Bright Green
+        '#3357FF', // Bright Blue
+        '#FF33A8', // Pink
+        '#33FFF5', // Cyan
+        '#F5FF33'  // Yellow
+    ];
+    
+    // Skills color change on hover
+    const skillCards = document.querySelectorAll('.service-card');
+    
+    skillCards.forEach(card => {
+        // Store original background color
+        const originalColor = getComputedStyle(card).backgroundColor;
+        
+        // Random color for each skill card
+        card.addEventListener('mouseenter', function() {
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            this.style.transition = 'background-color 0.5s ease';
+            this.style.backgroundColor = randomColor;
+            
+            // Change text color to black for better contrast with bright backgrounds
+            this.style.color = '#000000';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.backgroundColor = originalColor;
+            this.style.color = 'white'; // Reset to original text color
+        });
+    });
+    
+    // Project cards color change on hover (same effect as skills)
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    projectCards.forEach(card => {
+        // Store original background color
+        const originalColor = getComputedStyle(card).backgroundColor;
+        
+        // Random color for each project card
+        card.addEventListener('mouseenter', function() {
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            this.style.transition = 'background-color 0.5s ease';
+            this.style.backgroundColor = randomColor;
+            
+            // Change text color to black for better contrast with bright backgrounds
+            this.style.color = '#000000';
+            
+            // Change button color to match the original background for contrast
+            const button = this.querySelector('a');
+            if (button) {
+                button.style.backgroundColor = originalColor;
+                button.style.color = 'white';
+            }
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.backgroundColor = originalColor;
+            this.style.color = 'white'; // Reset to original text color
+            
+            // Reset button color
+            const button = this.querySelector('a');
+            if (button) {
+                button.style.backgroundColor = 'black';
+                button.style.color = 'white';
+            }
+        });
+    });
+});
