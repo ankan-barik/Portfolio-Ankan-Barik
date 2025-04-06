@@ -42,6 +42,159 @@ body {
     max-height: 300px;
   }
 }
+.close-menu {
+  display: none; /* Hide by default */
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+#mobile-menu.active .close-menu {
+  display: flex; /* Show when menu is active */
+}
+        /* Mobile Menu Styles */
+        @media (max-width: 767px) {
+          #mobile-menu {
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100vh;
+              background-color: rgba(0, 0, 0, 0.95);
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              justify-content: center;
+              z-index: 1000;
+              opacity: 0;
+              visibility: hidden;
+              transition: all 0.2s ease;
+              padding-left: 2rem;
+          }
+
+          .mobile-menu-button {
+              width: 30px;
+              height: 30px;
+              position: relative;
+              cursor: pointer;
+          }
+
+          .mobile-menu-button span {
+              display: block;
+              position: absolute;
+              height: 2px;
+              width: 100%;
+              background: white;
+              border-radius: 2px;
+              opacity: 1;
+              left: 0;
+              transform: rotate(0deg);
+              transition: .2s ease;
+          }
+
+          .mobile-menu-button span:nth-child(1) {
+              top: 6px;
+          }
+
+          .mobile-menu-button span:nth-child(2) {
+              top: 14px;
+          }
+
+          .mobile-menu-button span:nth-child(3) {
+              top: 22px;
+          }
+
+          .mobile-menu-button.active span:nth-child(1) {
+              top: 14px;
+              transform: rotate(45deg);
+          }
+
+          .mobile-menu-button.active span:nth-child(2) {
+              opacity: 0;
+          }
+
+          .mobile-menu-button.active span:nth-child(3) {
+              top: 14px;
+              transform: rotate(-45deg);
+          }
+
+          #mobile-menu.active {
+              opacity: 1;
+              visibility: visible;
+          }
+
+          #mobile-menu a {
+              color: white;
+              font-size: 24px;
+              margin: 15px 0;
+              text-decoration: none;
+              transition: all 0.2s ease;
+          }
+
+          #mobile-menu a:hover {
+              color: #ff4500;
+              transform: translateX(5px);
+          }
+      }
+
+      /* Desktop Menu Styles */
+      @media (min-width: 768px) {
+          #mobile-menu {
+              position: static;
+              height: auto;
+              opacity: 1;
+              visibility: visible;
+              background-color: transparent;
+              width: auto;
+              padding-top: 0.5rem;
+          }
+
+          #mobile-menu a {
+              font-size: 16px;
+              margin: 0;
+              padding: 0.5rem 1rem;
+              position: relative;
+          }
+
+          #mobile-menu a::after {
+              content: '';
+              position: absolute;
+              width: 0;
+              height: 2px;
+              bottom: 0;
+              left: 50%;
+              background-color: #ff4500;
+              transition: all 0.3s ease;
+              transform: translateX(-50%);
+          }
+
+          #mobile-menu a:hover::after {
+              width: 70%;
+          }
+      }
+
+      .close-menu {
+          position: absolute;
+          top: 1.25rem;
+          right: 1.25rem;
+          color: #ff4500;
+          font-size: 28px;
+          cursor: pointer;
+          z-index: 1001;
+          transition: transform 0.3s ease;
+          padding: 8px;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+
+      .close-menu:hover {
+          transform: rotate(90deg);
+      }
 
 /* Fix for iOS devices with home button */
 @supports (-webkit-touch-callout: none) {

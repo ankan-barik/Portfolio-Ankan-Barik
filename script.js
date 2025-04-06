@@ -8,14 +8,17 @@ document.addEventListener('DOMContentLoaded', function () {
         mobileMenuButton.addEventListener('click', function() {
             mobileMenu.classList.toggle('hidden');
         });
-        
-        // Close mobile menu when clicking on a link
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                mobileMenu.classList.add('hidden');
-            });
+          // Add close button functionality
+    const closeMobileMenu = document.getElementById('close-mobile-menu');
+    if (closeMobileMenu) {
+        closeMobileMenu.addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.remove('active');
+            document.getElementById('mobile-menu-button').classList.remove('active');
+            document.body.style.overflow = '';
         });
+    }
+        
+        
     }
     // Smooth scrolling for navigation links (existing code)
     const navLinks = document.querySelectorAll('nav a');
