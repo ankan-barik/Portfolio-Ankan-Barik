@@ -1,5 +1,4 @@
-
-   // Add this to your script.js file
+// Add this to your script.js file
 document.addEventListener('DOMContentLoaded', function () {
     // Mobile menu toggle
     const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -136,4 +135,50 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+});
+
+// Contact form submission and reset
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.querySelector('#contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.textContent;
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+            
+            try {
+                const formData = new FormData(this);
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    // Reset the form on successful submission
+                    this.reset();
+                    
+                    // Clear browser's form data cache
+                    window.history.replaceState(null, '', window.location.href);
+                    
+                    alert('Thank you! Your message has been sent successfully.');
+                } else {
+                    alert('Something went wrong. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Something went wrong. Please try again.');
+            } finally {
+                submitButton.textContent = originalButtonText;
+                submitButton.disabled = false;
+            }
+        });
+    }
 });
