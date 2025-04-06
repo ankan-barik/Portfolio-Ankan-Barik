@@ -26,21 +26,90 @@
             -webkit-text-fill-color: transparent;
         }
 
+        .nav-link {
+            position: relative;
+            transition: color 0.2s ease;
+        }
+
         .nav-link:hover {
             color: orange;
         }
 
         .service-card,
         .project-card {
-            transition: transform 0.3s ease;
+            transition: transform 0.2s ease;
+            will-change: transform;
         }
 
         .service-card:hover,
         .project-card:hover {
-            transform: scale(1.05);
+            transform: scale(1.02);
         }
 
-        
+        .social-icon-link {
+            will-change: transform;
+        }
+
+        .circle-wrapper {
+            will-change: opacity;
+        }
+
+        /* Mobile Menu Styles */
+        @media (max-width: 767px) {
+            #mobile-menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, 0.95);
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                z-index: 1000;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.2s ease, visibility 0.2s ease;
+                padding-left: 2rem;
+                will-change: opacity, visibility;
+            }
+
+            .mobile-menu-button {
+                width: 30px;
+                height: 30px;
+                position: relative;
+                cursor: pointer;
+            }
+
+            .mobile-menu-button span {
+                display: block;
+                position: absolute;
+                height: 2px;
+                width: 100%;
+                background: white;
+                border-radius: 2px;
+                opacity: 1;
+                left: 0;
+                transform: rotate(0deg);
+                transition: transform 0.2s ease, opacity 0.2s ease;
+                will-change: transform, opacity;
+            }
+
+            #mobile-menu a {
+                color: white;
+                font-size: 24px;
+                margin: 15px 0;
+                text-decoration: none;
+                transition: transform 0.2s ease, color 0.2s ease;
+                will-change: transform, color;
+            }
+
+            #mobile-menu a:hover {
+                color: #ff4500;
+                transform: translateX(5px);
+            }
+        }
     </style>
 </head>
 
@@ -135,7 +204,8 @@
                         <div class="w-64 h-64 md:w-96 md:h-96 bg-gradient-to-br from-orange-500 to-red-500 rounded-full absolute -z-10"></div>
                         <div class="home-img">
                             <img src="WhatsApp Image 2025-04-02 at 00.47.15_a8fb2567.jpg" alt="Profile Image"
-                                class="w-64 h-64 md:w-96 md:h-96 object-cover rounded-full relative z-10">
+                                class="w-64 h-64 md:w-96 md:h-96 object-cover rounded-full relative z-10"
+                                loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -152,7 +222,8 @@
                 <div class="w-64 h-64 md:w-96 md:h-96 bg-gradient-to-br from-orange-500 to-red-500 rounded-full absolute -z-10"></div>
                 <div class="home-img">
                     <img src="WhatsApp Image 2025-04-02 at 01.07.27_e9c47df3.jpg" alt="Ankan Barik"
-                        class="w-64 h-64 md:w-96 md:h-96 object-cover rounded-full relative z-10">
+                        class="w-64 h-64 md:w-96 md:h-96 object-cover rounded-full relative z-10"
+                        loading="lazy">
                 </div>
             </div>
         </div>
@@ -238,7 +309,7 @@
             <!-- First Project -->
             <div class="project-card bg-orange-600 p-3 rounded-lg flex-1">
                 <img src="Screenshot 2025-04-01 213951.png" alt="PrintFusion AI"
-                    class="w-full h-auto object-contain rounded-md mb-4">
+                    class="w-full h-auto object-contain rounded-md mb-4" loading="lazy">
                 <h3 class="text-2xl font-bold mb-4">PrintFusion AI</h3>
                 <p>A customized e-commerce platform for personalized T-Shirts and gifts,featuring an AI- powered "Create Design" section for AI-generated designs, color customization, and downloads.
                 </p>
@@ -250,7 +321,7 @@
             <!-- Second Project -->
             <div class="project-card bg-orange-600 p-3 rounded-lg flex-1">
                 <img src="Screenshot 2025-04-06 183744.png" alt="Diamond Price Predictor"
-                    class="w-full h-auto object-cover rounded-md mb-4">
+                    class="w-full h-auto object-cover rounded-md mb-4" loading="lazy">
                 <h3 class="text-2xl font-bold mb-4">Diamond Price Predict</h3>
                 <p>Implemented dynamic input forms for users to enter diamond attributes (carat,cut,color,clarity,width,length etc.),with
                     real-time validation and responsiveness.
@@ -263,7 +334,7 @@
             <!-- Third Project -->
             <div class="project-card bg-orange-600 p-3 rounded-lg flex-1">
                 <img src="Screenshot 2025-04-01 213224.png" alt="ShopEase"
-                    class="w-full h-auto object-cover rounded-md mb-4">
+                    class="w-full h-auto object-cover rounded-md mb-4" loading="lazy">
                 <h3 class="text-2xl font-bold mb-4">ShopEase</h3>
                 <p>A fully responsive Myntra clone built with an intuitive UI and seamless navigation, featuring a stylish interface, offering
                     a real-time shopping experience with modern design and animations.</p>
@@ -275,7 +346,7 @@
             <!-- Fourth Project -->
             <div class="project-card bg-orange-600 p-3 rounded-lg flex-1">
                 <img src="Screenshot 2025-04-02 161055.png" alt="Weather Sphere"
-                    class="w-full h-auto object-cover rounded-md mb-4">
+                    class="w-full h-auto object-cover rounded-md mb-4" loading="lazy">
                 <h3 class="text-2xl font-bold mb-4">Weather Sphere</h3>
                 <p>Displays live temperature, wind speed,sunrise/sunset timings for any searched location, and well-structured weather cards for easy navigation.</p>
                 <a href="https://ankan-barik.github.io/Weather-Sphere/"
@@ -286,7 +357,7 @@
             <!-- Fifth Project -->
             <div class="project-card bg-orange-600 p-3 rounded-lg flex-1">
                 <img src="Screenshot 2025-04-02 161116.png" alt="TimeZone Tracker"
-                    class="w-full h-auto object-cover rounded-md mb-4">
+                    class="w-full h-auto object-cover rounded-md mb-4" loading="lazy">
                 <h3 class="text-2xl font-bold mb-4">TimeZone Tracker</h3>
                 <p> Displays live time updates for different countries with a user-friendly interface, and additional features like search and alarm settings.</p>
                 <a href="https://ankan-barik.github.io/TimeZone-Tracker/"
@@ -298,7 +369,7 @@
             <!-- Sixth Project -->
             <div class="project-card bg-orange-600 p-3 rounded-lg flex-1">
                 <img src="Screenshot 2025-04-02 161747.png" alt="Jungle Slither Game"
-                    class="w-full h-auto object-cover rounded-md mb-4">
+                    class="w-full h-auto object-cover rounded-md mb-4" loading="lazy">
                 <h3 class="text-2xl font-bold mb-4">Jungle Slither Game</h3>
                 <p>Implemented Optimized Game Mechanics including collision detection, responsive design, and high-score saving for an enhanced user experience.</p>
                 <a href="https://ankan-barik.github.io/Jungle-Slither-Game/"
@@ -395,11 +466,25 @@
         <!-- Add this script for mobile menu toggle -->
         <script>
             document.addEventListener('DOMContentLoaded', function() {
+                // Cache DOM elements
                 const mobileMenu = document.getElementById('mobile-menu');
                 const mobileMenuButton = document.getElementById('mobile-menu-button');
                 const closeButton = document.getElementById('close-mobile-menu');
                 const navLinks = mobileMenu.querySelectorAll('a');
+                const contactForm = document.getElementById('contactForm');
 
+                // Debounce function for resize event
+                function debounce(func, wait) {
+                    let timeout;
+                    return function() {
+                        const context = this;
+                        const args = arguments;
+                        clearTimeout(timeout);
+                        timeout = setTimeout(() => func.apply(context, args), wait);
+                    };
+                }
+
+                // Mobile menu functions
                 function toggleMenu() {
                     mobileMenu.classList.toggle('active');
                     mobileMenuButton.classList.toggle('active');
@@ -412,6 +497,7 @@
                     document.body.style.overflow = '';
                 }
 
+                // Event listeners
                 mobileMenuButton.addEventListener('click', toggleMenu);
                 closeButton.addEventListener('click', closeMenu);
                 
@@ -419,42 +505,39 @@
                     link.addEventListener('click', closeMenu);
                 });
 
-                window.addEventListener('resize', function() {
+                // Debounced resize handler
+                const handleResize = debounce(() => {
                     if (window.innerWidth >= 768) {
                         closeMenu();
                     }
-                });
-            });
-        </script>
+                }, 100);
 
-        <!-- Add this script for contact form handling -->
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const contactForm = document.getElementById('contactForm');
-                
-                contactForm.addEventListener('submit', async function(e) {
-                    e.preventDefault();
-                    
-                    try {
-                        const formData = new FormData(contactForm);
-                        const response = await fetch('https://api.web3forms.com/submit', {
-                            method: 'POST',
-                            body: formData
-                        });
+                window.addEventListener('resize', handleResize);
+
+                // Contact form handling
+                if (contactForm) {
+                    contactForm.addEventListener('submit', async function(e) {
+                        e.preventDefault();
                         
-                        if (response.ok) {
-                            // Show success message
-                            alert('Message sent successfully!');
-                            // Reset the form
-                            contactForm.reset();
-                        } else {
-                            throw new Error('Failed to send message');
+                        try {
+                            const formData = new FormData(contactForm);
+                            const response = await fetch('https://api.web3forms.com/submit', {
+                                method: 'POST',
+                                body: formData
+                            });
+                            
+                            if (response.ok) {
+                                alert('Message sent successfully!');
+                                contactForm.reset();
+                            } else {
+                                throw new Error('Failed to send message');
+                            }
+                        } catch (error) {
+                            alert('Error sending message. Please try again.');
+                            console.error('Error:', error);
                         }
-                    } catch (error) {
-                        alert('Error sending message. Please try again.');
-                        console.error('Error:', error);
-                    }
-                });
+                    });
+                }
             });
         </script>
     </body>
