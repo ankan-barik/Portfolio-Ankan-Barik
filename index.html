@@ -426,6 +426,37 @@
                 });
             });
         </script>
+
+        <!-- Add this script for contact form handling -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const contactForm = document.getElementById('contactForm');
+                
+                contactForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    try {
+                        const formData = new FormData(contactForm);
+                        const response = await fetch('https://api.web3forms.com/submit', {
+                            method: 'POST',
+                            body: formData
+                        });
+                        
+                        if (response.ok) {
+                            // Show success message
+                            alert('Message sent successfully!');
+                            // Reset the form
+                            contactForm.reset();
+                        } else {
+                            throw new Error('Failed to send message');
+                        }
+                    } catch (error) {
+                        alert('Error sending message. Please try again.');
+                        console.error('Error:', error);
+                    }
+                });
+            });
+        </script>
     </body>
 
 
